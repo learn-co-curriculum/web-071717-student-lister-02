@@ -1,7 +1,21 @@
 class Student < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :email, :dob, presence: true
+  validates :email, uniqueness: true
 
-  # validate that the email is present
+  validates(:name, {:exclusion => {:in => ['Drop Table', 'Daniel']}})
+
+  validate :must_be_eighteen
+
+  def must_be_eighteen
+    # if self.dob
+      if self.dob && (Date.today - 18.years < self.dob)
+        errors.add(:dob, 'student cannot be a baby')
+      end
+    # end
+  end
+
+
+  # validate that the email is present x
   # validate that the email is unique
 
   # validate that the student is atleast 18 yo
