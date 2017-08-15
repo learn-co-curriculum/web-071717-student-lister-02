@@ -1,1 +1,17 @@
 <h1>Create a Student</h1>
+
+<%= form_for(@student, {html: {class: 'ui form'}}) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'Enter the students name' %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: 'Email' %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %>
+    <%= f.date_field :dob %>
+  </div>
+  <%= f.submit class: 'massive ui positive basic button' %>
+<% end %>
