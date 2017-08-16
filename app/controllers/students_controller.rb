@@ -1,5 +1,8 @@
 class StudentsController < ApplicationController
+  before_action :is_authenticated?, except: [:index]
+
   def index
+
     @students = Student.all
   end
 
@@ -27,4 +30,5 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :email, :dob)
   end
+
 end
