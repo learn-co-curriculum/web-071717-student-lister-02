@@ -12,11 +12,10 @@ class StudentsController < ApplicationController
   end
 
   def create
-    # byebug
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to students_path
+      redirect_to student_path(@student)
     else
       render :new
     end

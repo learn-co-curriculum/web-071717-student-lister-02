@@ -6,6 +6,10 @@
 ## User Stories
 
 1. As a registered user, I should be able to log in by providing my username (no passwords for today)
+1. DOES THE schema need to change
+
+2. do i need a new route
+'/login', to: 'sessions#login'
 
 > When I submit this login form...,
 find the user by their username
