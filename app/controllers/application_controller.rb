@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def is_authenticated?
     if !logged_in?
-      flash[:my_message] = 'You must be logged in to view this content'
+      flash[:message] = 'You must be logged in to view this content'
       redirect_to login_path
     end
   end
